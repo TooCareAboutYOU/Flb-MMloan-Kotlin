@@ -1,25 +1,71 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
+    //framework
+    ext.appcompat_version = '1.1.0'
+    ext.core_ktx_version = "1.1.0"
+    ext.junit_version = '4.12'
+    ext.test_junit_version = '1.1.1'
+    ext.espresso_core_version = '3.2.0'
+    ext.gradle_version = '3.5.3'
     ext.kotlin_version = '1.3.61'
+    //libraries
+    ext.anko_version = "0.10.8"
+    ext.retrofit2_version = "2.6.2"
+    ext.dagger_version = "2.24"
+    ext.glide_version = "4.10.0"
+    ext.rxlifecycle3_version = "3.1.0"
+    ext.rxjava2_version = "2.1.1"
+    ext.rxbinding_version="3.1.0"
+    ext.gson_version = "2.8.6"
+    ext.okhttp3_version = "4.2.2"
+    ext.android_job_version='1.4.2'
+    ext.work_version='1.0.1'
+    ext.andresguard_version='1.2.17'
+    ext.arouter_api_version='1.5.0'
+    ext.arouter_compiler_version='1.2.2'
+    ext.mmkv_version='1.0.23'
+    //UIs
+    ext.constraintlayout_version = '1.1.3'
+    ext.immersionbar_version='3.0.0'
     repositories {
+        mavenCentral()
         google()
         jcenter()
-
+        maven { url 'https://jitpack.io'; 'https://maven.google.com' }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.2'
+        classpath "com.android.tools.build:gradle:$gradle_version"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+        classpath "com.tencent.mm:AndResGuard-gradle-plugin:$andresguard_version"
     }
+
 }
 
 allprojects {
+    //project configs
+    ext.project_app_compileSdk_version = 29
+    ext.project_app_buildTools_version = "29.0.2"
+    ext.project_app_minSdk_version = 19
+    ext.project_app_targetSdk_version = 29
+    ext.project_app_version_code = 1
+    ext.project_app_version_name = "1.0.0"
+    ext.project_cmake_version = "3.10.2"
+
+    ext.project_base_compileSdk_version = 29
+    ext.project_base_buildTools_version = "29.0.2"
+    ext.project_base_minSdk_version = 19
+    ext.project_base_targetSdk_version = 29
+    ext.project_base_version_code = 1
+    ext.project_base_version_name = "1.0.0"
+
     repositories {
         google()
         jcenter()
-
+        maven {
+            url 'https://maven.google.com'; 'https://jitpack.io';
+            'https://dl.google.com/dl/android/maven2/'
+        }
     }
 }
 

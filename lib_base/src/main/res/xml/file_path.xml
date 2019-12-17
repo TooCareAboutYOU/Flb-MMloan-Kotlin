@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+<!--
+<files-path name="*name*" path="*path*" />   对应的是：Context.getFileDir()的路径地址
+
+     对应路径:Context.getFileDir()+"/${path}/"
+     得到路径:content://${applicationId}/&{name}/
+
+     <cache-path name="*name*" path="*path*" />
+     对应路径:Context.getCacheFir()+"/${path}/"
+     得到路径:content://${applicationId}/&{name}/
+
+     <external-path name="*name*" path="*path*" />
+     对应路径:Environment.getExternalStorageDirectory()+"/${path}/"
+     得到路径:content://${applicationId}/&{name}/
+
+     <external-files-path name="*name*" path="*path*" />
+     对应路径:Context.getExternalStorageDirectory()+"/${path}/"
+     得到路径:content://${applicationId}/&{name}/
+
+     <external-cache-path name="*name*" path="*path*" />
+     对应路径: Context.getExternalCacheDir()+"/${path}/"
+     得到路径：content://${applicationId}/&{name}/
+-->
+
+    <files-path
+        name="file"
+        path="fp" />
+    <cache-path
+        name="cache"
+        path="cp" />
+    <external-path
+        name="externalP"
+        path="ep" />
+    <external-cache-path
+        name="externalCp"
+        path="ecp" />
+    <external-files-path
+        name="externalFp"
+        path="efp" />
+</paths>
