@@ -3,25 +3,35 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="model"
+            type="com.mmkj.mmloan.viewmodel.SplashViewModel" />
+    </data>
+
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.splash.SplashActivity"
-        android:orientation="vertical"
-        android:fitsSystemWindows="true">
+        android:orientation="vertical">
 
         <include layout="@layout/base_toolbar"/>
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/acTvJump"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:layout_gravity="center"
-            android:text="引导页"
+            android:gravity="center"
+            android:text="@{model.text}"
+            android:hint="请点击"
             android:textSize="18sp"
-            android:background="@drawable/iv_splash"
-            android:textColor="@color/colorRed"/>
+            android:onClick="@{model::login}"
+            android:textColor="@color/colorRed" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bottom"
+            android:layout_gravity="center"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 </layout>

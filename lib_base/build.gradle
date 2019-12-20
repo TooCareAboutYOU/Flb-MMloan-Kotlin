@@ -48,9 +48,14 @@ dependencies {
     androidTestImplementation "androidx.test.ext:junit:$test_junit_version"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_core_version"
     api "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
+    api "androidx.recyclerview:recyclerview:$appcompat_version"
+    api "androidx.cardview:cardview:$cardview_version"
+    api "com.google.android.material:material:$material_version"
+
+    api "org.koin:koin-android-viewmodel:$koin_version"
 
     //协程
-//    api 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.2'
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinx_coroutines_version"
 //    //反射
 //    api 'org.jetbrains.kotlinx:kotlinx.reflect.lite:1.0.0'
 //    //anko
@@ -72,6 +77,8 @@ dependencies {
     api "com.squareup.retrofit2:converter-gson:$retrofit2_version"
     api "com.squareup.okhttp3:okhttp:$okhttp3_version"
     api "com.squareup.okhttp3:logging-interceptor:$okhttp3_version"
+    //打印日志
+    api "com.orhanobut:logger:$logger_version"
 
     /**
      * RxLifecycle
@@ -79,7 +86,7 @@ dependencies {
     //内部引用了基础库，如果使用此库则无需再引用基础库
     api "com.trello.rxlifecycle3:rxlifecycle-components:$rxlifecycle3_version"
     // 支持Kotlin语法的RxLifecycle基础库
-    api "com.trello.rxlifecycle3:rxlifecycle-kotlin:$rxlifecycle3_version"
+//    api "com.trello.rxlifecycle3:rxlifecycle-kotlin:$rxlifecycle3_version"
     // 支持Kotlin语法的Android库
     api "com.trello.rxlifecycle3:rxlifecycle-android-lifecycle-kotlin:$rxlifecycle3_version"
 
@@ -97,12 +104,22 @@ dependencies {
     //扩展包
     api "com.gyf.immersionbar:immersionbar-ktx:$immersionbar_version"
 
-    //过时了
-//    api "com.evernote:android-job:$android_job_version"
+
     api "android.arch.work:work-runtime:$work_version"
 
     //轻量级保存
     api "com.tencent:mmkv:$mmkv_version"
+
+    //RecyclerView通用适配器
+    api "com.github.CymChad:BaseRecyclerViewAdapterHelper:$rv_adapter_version"
+
+    //字体
+    api "uk.co.chrisjenx:calligraphy:$calligraphy_version"
+
+    //七牛SDK上传图片
+    api "com.qiniu:qiniu-android-sdk:$qiniu_version"
+
+
 
 
 }
