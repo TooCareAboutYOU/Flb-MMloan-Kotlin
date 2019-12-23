@@ -53,7 +53,7 @@ class Init private constructor(app: Application) {
     /**
      * 初始化轻量级数据存储
      */
-    fun initMmkv(): Init{
+    fun initMmkv(): Init {
         MMKV.initialize(application?.applicationContext)
         return this
     }
@@ -62,7 +62,7 @@ class Init private constructor(app: Application) {
      * 初始化接口类
      */
     fun <T> initRetrofit(baseUrl: String, clazz: Class<T>): T {
-        return HttpModule.instance.init(application!!.applicationContext,baseUrl).create(clazz)
+        return HttpModule.instance.init(application!!.applicationContext, baseUrl).create(clazz)
     }
 
     /**
@@ -75,7 +75,6 @@ class Init private constructor(app: Application) {
                 it.setFontAttrId(R.attr.fontPath)
                 it.build()
             }
-
         )
         return this
     }
@@ -95,6 +94,5 @@ val uploadQiNiu by lazy {
         it.zone(FixedZone.zoneAs0)
         it.build()
     }
-
     UploadManager(configuration)
 }

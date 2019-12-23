@@ -4,9 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="model"
-            type="com.mmkj.mmloan.viewmodel.SplashViewModel" />
+            type="com.mmkj.mmloan.view.splash.SplashViewModel" />
+
     </data>
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -14,24 +16,28 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <include layout="@layout/base_toolbar"/>
+        <include layout="@layout/base_toolbar" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
             android:layout_gravity="center"
+            android:layout_weight="1"
             android:gravity="center"
-            android:text="@{model.text}"
             android:hint="请点击"
-            android:textSize="18sp"
             android:onClick="@{model::login}"
-            android:textColor="@color/colorRed" />
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Bottom"
-            android:layout_gravity="center"/>
+            android:text="@{model.text}"
+            android:textColor="@color/colorRed"
+            android:textSize="18sp" />
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/acBtnToMain"
+            android:layout_width="match_parent"
+            android:layout_height="?android:actionBarSize"
+            android:layout_gravity="center"
+            android:enabled="@{model.isShow()}"
+            android:gravity="center"
+            android:onClick="@{model::SecondPage}"
+            android:text="Bottom" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 </layout>

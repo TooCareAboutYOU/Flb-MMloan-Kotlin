@@ -1,4 +1,4 @@
-package com.mmkj.mmloan.model
+package com.mmkj.mmloan.base
 
 /**
  * @author zhangshuai
@@ -10,7 +10,7 @@ package com.mmkj.mmloan.model
  * @date 2019-12-20 11:12
  * @description
  */
-interface IView {
+interface BaseView {
     /**
      *  显示空视图
      */

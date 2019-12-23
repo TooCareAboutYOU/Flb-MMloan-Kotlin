@@ -1,6 +1,7 @@
 package com.mmkjflb.lib.base.app
 
 import android.app.Application
+import com.mmkjflb.lib.base.Init
 
 /**
  * @author zhangshuai
@@ -10,5 +11,6 @@ import android.app.Application
 open class BaseApplication : Application() {
     override fun onCreate() {
         super.onCreate()
+        Init.getInstance(this).initArouter().initMmkv().initFont()
     }
 }

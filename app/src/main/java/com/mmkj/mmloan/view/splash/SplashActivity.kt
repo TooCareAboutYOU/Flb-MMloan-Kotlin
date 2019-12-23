@@ -8,18 +8,15 @@ import com.mmkj.mmloan.ArouterPath
 import com.mmkj.mmloan.BR
 import com.mmkj.mmloan.R
 import com.mmkj.mmloan.databinding.ActivitySplashBinding
-import com.mmkj.mmloan.viewmodel.SplashViewModel
 import com.mmkjflb.lib.base.base.BaseActivity
 import org.koin.android.viewmodel.ext.android.viewModel
 
 @Route(path = ArouterPath.PATH_SPLASH)
 @AnnoActivityLayout(layoutResId = R.layout.activity_splash)
-class SplashActivity : BaseActivity<ActivitySplashBinding,SplashViewModel>() {
-
-    private val mViewModel: SplashViewModel by viewModel()
+class SplashActivity : BaseActivity<ActivitySplashBinding>() {
 
     override fun onCreateBefore() {
-       setTheme(R.style.AppTheme)
+        setTheme(R.style.AppTheme)
     }
 
     @SuppressLint("CheckResult")
@@ -27,10 +24,11 @@ class SplashActivity : BaseActivity<ActivitySplashBinding,SplashViewModel>() {
 
     }
 
-    override fun bindViewModel(): SplashViewModel { return mViewModel
+    override fun bindViewModel(): SplashViewModel {
+        val model: SplashViewModel by viewModel()
+        model.setVariableId(this, BR.model)
+        return model
     }
-
-    override fun variableId(): Int =BR.model
 
 
 }

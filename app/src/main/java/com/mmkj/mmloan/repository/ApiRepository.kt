@@ -11,7 +11,7 @@ import io.reactivex.Observable
  * @date 2019-12-19 15:03
  * @description
  */
-class ApiRepository(private val remote: ApiService) :ApiService{
+class ApiRepository(private val remote: ApiService) : ApiService {
 
     override fun getInfo(
         platformType: String,

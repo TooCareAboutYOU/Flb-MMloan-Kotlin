@@ -4,11 +4,13 @@ import android.content.Context
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import com.alibaba.android.arouter.launcher.ARouter
 import com.gyf.immersionbar.BarHide
 import com.gyf.immersionbar.ktx.immersionBar
 import com.mmkjflb.lib.base.HINT_EMPTY_LAYOUT
 import com.mmkjflb.lib.base.R
 import com.mmkjflb.lib.base.annotation.AnnoActivityLayout
+import com.mmkjflb.lib.base.manager.ActivityManager
 import com.mmkjflb.lib.base.view.toolbar.ToolbarHelper
 import com.trello.rxlifecycle3.components.support.RxAppCompatActivity
 import org.koin.android.viewmodel.ext.android.viewModel
@@ -35,7 +37,7 @@ abstract class DataBindingActivity<B : ViewDataBinding> : RxAppCompatActivity() 
     abstract fun initView(savedInstanceState: Bundle?)
 
     /**
-     * 绑定
+     * ViewModel 与DataBind 绑定
      */
     open fun initViewModel(binding: ViewDataBinding) {
 
@@ -61,7 +63,10 @@ abstract class DataBindingActivity<B : ViewDataBinding> : RxAppCompatActivity() 
     override fun onCreate(savedInstanceState: Bundle?) {
         onCreateBefore()
         super.onCreate(savedInstanceState)
+        ActivityManager.INSTANCE.add(this)
+        ARouter.getInstance().inject(this)
         loadInit(savedInstanceState)
+
     }
 
     /**
@@ -76,7 +81,6 @@ abstract class DataBindingActivity<B : ViewDataBinding> : RxAppCompatActivity() 
             toolBarView = ToolbarHelper(this)
             loadBarView(false)
             initView(savedInstanceState)
-
         }
     }
 
@@ -100,7 +104,9 @@ abstract class DataBindingActivity<B : ViewDataBinding> : RxAppCompatActivity() 
 
     override fun onDestroy() {
         super.onDestroy()
+        ActivityManager.INSTANCE.remove(this)
         mDataBinding.unbind()
+        println("关闭界面-------->>>>>>>>")
     }
 
 }

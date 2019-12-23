@@ -119,6 +119,9 @@ dependencies {
     //七牛SDK上传图片
     api "com.qiniu:qiniu-android-sdk:$qiniu_version"
 
+    //监听内存溢出，只在debug模式下运行
+//    debugApi 'com.squareup.leakcanary:leakcanary-android:2.0'
+
 
 
 

@@ -2,7 +2,6 @@ package com.mmkj.mmloan.base
 
 import android.content.DialogInterface
 import androidx.appcompat.app.AlertDialog
-import androidx.lifecycle.LifecycleObserver
 import com.mmkj.mmloan.app.MmloanApplication
 import com.mmkjflb.lib.base.base.BaseViewModel
 import com.mmkj.mmloan.model.entity.BaseBean

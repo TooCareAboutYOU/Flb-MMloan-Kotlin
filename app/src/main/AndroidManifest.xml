@@ -5,6 +5,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
 
     <supports-screens android:resizeable="true" />
 
@@ -41,12 +42,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<!--        <activity-->
-<!--            android:name=".view.main.MainActivity"-->
-<!--            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation|keyboardHidden"-->
-<!--            android:screenOrientation="portrait"-->
-<!--            android:theme="@style/ActivityTheme" />-->
-
+        <activity
+            android:name=".view.main.MainActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityTheme" />
+        <!---->
         <!-- 适配华为（huawei）刘海屏 -->
         <meta-data
             android:name="android.notch_support"
